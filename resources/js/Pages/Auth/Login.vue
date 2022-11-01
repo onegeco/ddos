@@ -102,12 +102,12 @@ export default {
                                 </div>
                             </div>
                             <div class="mb-3 text-center mx-auto">
-                                <VueRecaptcha 
+                                <!--VueRecaptcha 
                                     ref="recaptcha" 
                                     :sitekey="siteKey" 
                                     :loadRecaptchaScript="true"
                                     @verify="handleSuccess" 
-                                    @error="handleError"/>
+                                    @error="handleError"/-->
                             </div>
 
                             <div class="mt-4">

@@ -104,12 +104,12 @@ export default {
                                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" v-model="form.password_confirmation" required aria-describedby="passwordInput" autocomplete="new-password"/>
                                         </div>
                                         <div class="mb-3 text-center mx-auto">
-                                <VueRecaptcha 
+                                <!--VueRecaptcha 
                                     ref="recaptcha" 
                                     :sitekey="siteKey" 
                                     :loadRecaptchaScript="true" 
                                     @verify="handleSuccess" 
-                                    @error="handleError"/>
+                                    @error="handleError"/-->
                             </div>
 
                                         <div class="mt-4">
