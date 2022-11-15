@@ -11,7 +11,7 @@ import { useToast } from "vue-toastification";
 
 const props = defineProps(['domain_url'])
 
-const siteKey = computed(() => '6Lf_vAwjAAAAAO2pfIzKw1Fjxl6_kPCKeXiEoUpY')
+const siteKey = computed(() => '6LcfKw0jAAAAAGNrTEUGAYq-qWjcO9motYKJQF1k')
 const toast = useToast();
 </script>
 
@@ -54,6 +54,7 @@ export default {
                this.responses.push(response)
                this.isfetching = false
                this.isdoneFetching = true
+               this.form.processing = false
             });
             
             if((a + 1) >= this.form.packets) {
@@ -61,6 +62,7 @@ export default {
             }
             if(a <= this.form.packets) {
                this.isfetching = true
+               this.form.processing = true
             }
          } 
 
@@ -82,7 +84,7 @@ export default {
 
    mounted() {
       
-      console.log('6Lf_vAwjAAAAAO2pfIzKw1Fjxl6_kPCKeXiEoUpY')
+      console.log('6LcfKw0jAAAAAGNrTEUGAYq-qWjcO9motYKJQF1k')
          const element = document.getElementById("code_view");
          element.scrollIntoView(false);
    },
@@ -143,7 +145,7 @@ export default {
                                        <div class="row">
                                           <div class="col-md-6 mb-3">
                                              <Button class="fs-15 form-control form-control-lg" type="submit" :class="{ 'opacity-25': isfetching }"
-                                                   :disabled="isfetching">
+                                                :disabled=" isfetching">
                                                    Initiate
                                              </Button>
                                           </div>

@@ -9,7 +9,7 @@ import { VueRecaptcha } from 'vue-recaptcha'
 import { computed } from 'vue'
 import { useToast } from "vue-toastification";
 
-const siteKey = computed(() => '6Lf_vAwjAAAAAO2pfIzKw1Fjxl6_kPCKeXiEoUpY')
+const siteKey = computed(() => '6LcfKw0jAAAAAGNrTEUGAYq-qWjcO9motYKJQF1k')
 const toast = useToast();
 </script>
 
