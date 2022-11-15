@@ -82,7 +82,7 @@ export default {
 
    mounted() {
       
-
+      console.log('6Lf_vAwjAAAAAO2pfIzKw1Fjxl6_kPCKeXiEoUpY')
          const element = document.getElementById("code_view");
          element.scrollIntoView(false);
    },
