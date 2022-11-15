@@ -10,6 +10,8 @@ import Toast from "vue-toastification"
 import "vue-toastification/dist/index.css"
 import moment from 'moment'
 import VueApexCharts from "vue3-apexcharts";
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Ecormmerce Store';
 
@@ -26,6 +28,7 @@ createInertiaApp({
             .use(ZiggyVue, Ziggy)
             .use(Toast, toastOptions)
             .use(VueApexCharts)
+            .use(VueSweetalert2)
 
             app.config.globalProperties.$filters = {
                 str_pad(v) {

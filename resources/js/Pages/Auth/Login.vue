@@ -32,14 +32,25 @@ export default {
             this.form.processing = true
             //this.$refs.recaptcha.execute()
 
-            await axios.post(route('login'), this.form).then((res) => {
-                this.toast.success(res.data.message)
-                //window.location.reload()
-                this.$inertia.visit('/account/dashboard')
-            }).catch((err) => {
-                this.form.processing = false
-                this.onCaptchaExpired()
-                this.toast.error(err.response.data.message)
+            await axios.post(route('login'), this.form)
+                .then((res) => {
+                    //this.toast.success(res.data.message)
+                    this.$swal({
+                        title: 'Success',
+                        text: res.data.message,
+                        icon: 'success'
+                    })
+                    //window.location.reload()
+                    this.$inertia.visit('/account/dashboard')
+                })
+                .catch((err) => {
+                    this.form.processing = false
+                    // this.onCaptchaExpired()
+                    this.$swal({
+                        title: 'Error',
+                        text: err.response.data.message,
+                        icon: 'error'
+                    })
             })
         },
 

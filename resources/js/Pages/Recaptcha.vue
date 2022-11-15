@@ -11,7 +11,7 @@ import { useToast } from "vue-toastification";
 
 const props = defineProps(['domain_url'])
 
-const siteKey = computed(() => '6LchQ48hAAAAAEsyZl3EQhkGFzWm-pMNSFvis-w2')
+const siteKey = computed(() => '6Lf_vAwjAAAAAO2pfIzKw1Fjxl6_kPCKeXiEoUpY')
 const toast = useToast();
 </script>
 
