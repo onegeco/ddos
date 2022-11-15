@@ -49,7 +49,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(5)->by(optional($request->user())->id ?: $request->ip())->response(function($request) {
+            return Limit::perMinute(10)->by(optional($request->user())->id ?: $request->ip())->response(function($request) {
                 $log = Responselog::create([
                     'status' => 'failed',
                     'reason' => 'Request blocked, too many requests by IP',
