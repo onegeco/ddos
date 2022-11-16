@@ -10,7 +10,7 @@ import { VueRecaptcha } from 'vue-recaptcha'
 import { computed } from 'vue'
 import { useToast } from "vue-toastification";
 
-const siteKey = computed(() => '6LchQ48hAAAAAEsyZl3EQhkGFzWm-pMNSFvis-w2')
+const siteKey = computed(() => '6LcfKw0jAAAAAGNrTEUGAYq-qWjcO9motYKJQF1k')
 const toast = useToast();
 </script>
 
@@ -32,6 +32,7 @@ export default {
     methods: {
         async submit() {
             this.form.processing = true
+            this.$refs.recaptcha.reset();
             await axios.post(route('register'), this.form).then((res) => {
                 this.toast.success(res.data.message)
                 this.$inertia.visit('/account/dashboard')
@@ -104,12 +105,12 @@ export default {
                                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" v-model="form.password_confirmation" required aria-describedby="passwordInput" autocomplete="new-password"/>
                                         </div>
                                         <div class="mb-3 text-center mx-auto">
-                                <!--VueRecaptcha 
+                                <VueRecaptcha
                                     ref="recaptcha" 
                                     :sitekey="siteKey" 
                                     :loadRecaptchaScript="true" 
                                     @verify="handleSuccess" 
-                                    @error="handleError"/-->
+                                    @error="handleError"/>
                             </div>
 
                                         <div class="mt-4">

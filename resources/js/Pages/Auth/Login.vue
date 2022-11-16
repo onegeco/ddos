@@ -9,7 +9,7 @@ import { VueRecaptcha } from 'vue-recaptcha'
 import { computed } from 'vue'
 import { useToast } from "vue-toastification";
 
-const siteKey = computed(() => '6LchQ48hAAAAAEsyZl3EQhkGFzWm-pMNSFvis-w2')
+const siteKey = computed(() => '6LcfKw0jAAAAAGNrTEUGAYq-qWjcO9motYKJQF1k')
 const toast = useToast();
 </script>
 
@@ -30,7 +30,7 @@ export default {
     methods: {
         async submit() {
             this.form.processing = true
-            //this.$refs.recaptcha.execute()
+            this.$refs.recaptcha.reset();
 
             await axios.post(route('login'), this.form)
                 .then((res) => {
@@ -45,7 +45,7 @@ export default {
                 })
                 .catch((err) => {
                     this.form.processing = false
-                    // this.onCaptchaExpired()
+                    this.onCaptchaExpired()
                     this.$swal({
                         title: 'Error',
                         text: err.response.data.message,
@@ -113,12 +113,12 @@ export default {
                                 </div>
                             </div>
                             <div class="mb-3 text-center mx-auto">
-                                <!--VueRecaptcha 
+                                <VueRecaptcha
                                     ref="recaptcha" 
                                     :sitekey="siteKey" 
                                     :loadRecaptchaScript="true"
                                     @verify="handleSuccess" 
-                                    @error="handleError"/-->
+                                    @error="handleError" />
                             </div>
 
                             <div class="mt-4">
