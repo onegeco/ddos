@@ -108,7 +108,7 @@ export default {
       <!-- end page title -->
       
       <div class="row">
-         <div class="col">
+         <!--div class="col">
             <div class="h-100">
                <div class="card card-animate">
                   <div class="card-body">
@@ -117,7 +117,7 @@ export default {
                   </div>
                </div>
             </div>
-         </div>
+         </div-->
                      </div>
                      
                      <div class="row">
